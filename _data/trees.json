@@ -1,0 +1,23 @@
+{
+  "text": "do you have symptoms?",
+  "children": [
+    {
+      "text": "yes",
+      "children": [
+        {
+          "text": "do you have a catheter?",
+          "children": [
+            {"text": "yes"},
+            {"text": "no"}
+          ]
+        },
+      ]
+    },
+    {
+      "text": "no",
+      "children": [
+        {"text": "no catheter, no cauti"}
+      ]
+    }
+  ]
+}

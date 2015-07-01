@@ -1,0 +1,21 @@
+{ "questions": 
+  [ 
+    { "text": "Do you have symptoms?",
+      "parent": "start",
+      "options": [ 
+        "Yes symptoms.", 
+        "No symptoms." 
+        ] 
+    },
+    { "text": "Do you have a catheter?",
+      "parent": "Yes symptoms.",
+      "options": [ 
+        "Yes catheter.", 
+        "No catheter." 
+        ] 
+    },
+    { "text": "No catheter no cauti.", 
+      "parent": "No symptoms." 
+    } 
+  ] 
+}
