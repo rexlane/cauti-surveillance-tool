@@ -4,7 +4,7 @@
   $(document).ready(function() {
     return $.ajax({
       type: "GET",
-      url: "/data/questions.json",
+      url: "/cauti-surveillance-tool/data/questions.json",
       success: function(data, textStatus, jqXHR) {
         console.log(data.questions);
         window.questions = data.questions;

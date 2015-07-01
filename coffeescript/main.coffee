@@ -4,7 +4,7 @@
 $(document).ready ->
   $.ajax
     type: "GET"
-    url: "/data/questions.json"
+    url: "{{ site.baseurl }}/data/questions.json"
     success: (data, textStatus, jqXHR) ->
       console.log(data.questions)
       window.questions = data.questions
