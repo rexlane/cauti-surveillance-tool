@@ -8,40 +8,34 @@ $(document).ready ->
     success: (data, textStatus, jqXHR) ->
       console.log(data.questions)
       window.questions = data.questions
-      # printQuestions()
-      printQuestions("start")
-      resetPage()
-      
-printQuestions = (parent) ->
-  for question in questions when question.parent is parent
-    # $("#question_block").append("<div class='#{question.type}'>#{question.text}</div>")
+      printQuestion("start")
+      loadQuestionFromHash()
 
-    html_string = ""
-    html_string = html_string + "<div class='#{question.type}'>#{question.text}</div>"
+printQuestion = (question_id) ->
+  question = questions[question_id]
+  html_string = ""
+  html_string = html_string + "<div class='#{question.type}' id='#{question_id}'>#{question.text}</div>"
 
-    if question.criteria?
-      html_string = html_string + "<ul>"
-      for criteria_items in question.criteria
-        html_string = html_string + "<li>#{criteria_items}</li>"
-      html_string = html_string + "</ul>"
-      # $("#question_block").append(html_string)
+  if question.criteria?
+    html_string = html_string + "<ul>"
+    for criteria_items in question.criteria
+      html_string = html_string + "<li>#{criteria_items}</li>"
+    html_string = html_string + "</ul>"
 
-    if question.options?
-      html_string = html_string + "<ul>"
-      for option in question.options  
-        html_string = html_string + "<a href='#'><li id='#{option.id}' class='option_button'>#{option.text}</li></a>"
-      html_string = html_string + "</ul>"
-      # $("#question_block").append(options_html_string)
+  if question.options?
+    html_string = html_string + "<ul>"
+    for option in question.options  
+      html_string = html_string + "<a href='##{option.target}'><li id='#{option.target}' class='option_button'>#{option.text}</li></a>"
+    html_string = html_string + "</ul>"
 
-    $("#question_block").html(html_string)
-    chooseOption()
+  $("#question_block").html(html_string)
+  chooseNext()
 
-chooseOption = ->
-  $(".option_button").click ->
-    # console.log($(this).attr('id'))
-    opt_id = $(this).attr('id')
-    printQuestions(opt_id)
+loadQuestionFromHash = ->
+  hash = location.hash
+  hash = hash.substring(1)
+  printQuestion(hash)
 
-resetPage = ->
-  $(".page-heading, #start_over").click ->
-    printQuestions("start")
+chooseNext = ->
+  $(window).bind 'hashchange', (e) ->
+    loadQuestionFromHash()

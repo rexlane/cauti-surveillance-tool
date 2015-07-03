@@ -1,85 +1,85 @@
 { "questions": 
-  [
-    { "parent": "start",
-      "type": "question",
-      "text": "Does the resident display one or more of the following with no alternate source?",
-      "criteria": 
-        [ "Fever (single temperate ≥ 100°F or > 99°F on repeated occasions, or >2°F over baseline)",
-         "Rigors (shaking chills)",
-         "New onset hypotension with no alternate site of infection",
-         "New onset confusion/functional decline AND Leukocytosis (>14,000 cells/mm3 or Left Shift with >6% or >1,500 bands/mm3)",
-         "New costovertebral angle pain or tenderness",
-         "New or marked increase in suprapubic pain or tenderness",
-         "Acute pain, swelling or tenderness of the testes, epididymis, or prostate",
-         "Purulent discharge (pus) from around the catheter" 
-        ],
-      "options": 
-        [ { "id": "yes_symptoms", "text": "Yes" },
-          { "id": "no_symptoms", "text": "No" } 
-        ] 
-    },
+  {
+    "start": 
+      { "type": "question",
+        "text": "Does the resident display one or more of the following with no alternate source?",
+        "criteria": 
+          [ "Fever (single temperate ≥ 100°F or > 99°F on repeated occasions, or >2°F over baseline)",
+           "Rigors (shaking chills)",
+           "New onset hypotension with no alternate site of infection",
+           "New onset confusion/functional decline AND Leukocytosis (>14,000 cells/mm3 or Left Shift with >6% or >1,500 bands/mm3)",
+           "New costovertebral angle pain or tenderness",
+           "New or marked increase in suprapubic pain or tenderness",
+           "Acute pain, swelling or tenderness of the testes, epididymis, or prostate",
+           "Purulent discharge (pus) from around the catheter" 
+          ],
+        "options": 
+          [ { "target": "cath_or_no_cath", "text": "Yes" },
+            { "target": "no_symptoms_no_cauti", "text": "No" } 
+          ] 
+      },
 
-    { "parent": "yes_symptoms",
-      "type": "question",
-      "text": "Please select the appropriate option below.",
-      "options": 
-        [ { "id": "cath_removed",
-            "text": "The urinary catheter was removed in the last two (2) calendar days." 
-          },
-          { "id": "cath_in_place",
-            "text": "The urinary catheter is in place." 
-          } 
-        ] 
-    },
+    "cath_or_no_cath": 
+      { "type": "question",
+        "text": "Please select the appropriate option below.",
+        "options": 
+          [ { "target": "no_cath_culture",
+              "text": "The urinary catheter was removed in the last two (2) calendar days." 
+            },
+            { "target": "cath_culture",
+              "text": "The urinary catheter is in place." 
+            } 
+          ] 
+      },
 
-    { "parent": "no_symptoms",
-      "type": "result",
-      "text": "The resident does not display the symptoms of CAUTI." 
-    },
+    "no_symptoms_no_cauti": 
+      { "type": "result",
+        "text": "The resident does not display the symptoms of CAUTI." 
+      },
 
-    { "parent": "cath_removed",
-      "type": "question",
-      "text": "Does a urine culture reveal either of the following?",
-      "criteria": 
-        [ "A voided urine culture positive for ≥105 colony forming units (CFU)/ml of no more than 2 species of microorganisms",
-          "Positive culture with ≥102 colony forming units (CFU)/ml of any number of microorganisms from straight in/out catheter specimen" 
-        ],
-      "options": 
-        [ { "id": "culture_cath_removed_yes", "text": "Yes" },
-          { "id": "culture_cath_removed_no", "text": "No" } 
-        ] 
-    },
+    "no_cath_culture": 
+      { "type": "question",
+        "text": "Does a urine culture reveal either of the following?",
+        "criteria": 
+          [ "A voided urine culture positive for ≥105 colony forming units (CFU)/ml of no more than 2 species of microorganisms",
+            "Positive culture with ≥102 colony forming units (CFU)/ml of any number of microorganisms from straight in/out catheter specimen" 
+          ],
+        "options": 
+          [ { "target": "no_cath_culture_positive", "text": "Yes" },
+            { "target": "no_cath_culture_negative", "text": "No" } 
+          ] 
+      },
 
-    { "parent": "culture_cath_removed_yes",
-      "type": "result",
-      "text": "The resident's symptoms and urine culture results signify CAUTI." 
-    },
+    "no_cath_culture_positive":
+      { "type": "result",
+        "text": "The resident's symptoms and urine culture results signify CAUTI." 
+      },
 
-    { "parent": "culture_cath_removed_no",
-      "type": "result",
-      "text": "The resident's urine culture results do not signify CAUTI." 
-    },
+    "no_cath_culture_negative": 
+      { "type": "result",
+        "text": "The resident's urine culture results do not signify CAUTI." 
+      },
 
-    { "parent": "cath_in_place",
-      "type": "question",
-      "text": "Does a urine culture reveal the following?",
-      "criteria": 
-        [ "Positive culture with ≥105 colony forming units (CFU)/ml of any number of microorganisms from indwelling catheter specimen" ],
-      "options": 
-        [ { "id": "culture_cath_in_place_yes", "text": "Yes" },
-          { "id": "culture_cath_in_place_no", "text": "No" } 
-        ] 
-    },
+    "cath_culture":
+      { "type": "question",
+        "text": "Does a urine culture reveal the following?",
+        "criteria": 
+          [ "Positive culture with ≥105 colony forming units (CFU)/ml of any number of microorganisms from indwelling catheter specimen" ],
+        "options": 
+          [ { "target": "cath_culture_positive", "text": "Yes" },
+            { "target": "cath_culture_negative", "text": "No" } 
+          ] 
+      },
 
-    { "parent": "culture_cath_in_place_yes",
-      "type": "result",
-      "text": "The resident's symptoms and urine culture results signify CAUTI." 
-    },
+    "cath_culture_positive": 
+      { "type": "result",
+        "text": "The resident's symptoms and urine culture results signify CAUTI." 
+      },
     
-    { "parent": "culture_cath_in_place_no",
-      "type": "result",
-      "text": "The resident's urine culture results do not signify CAUTI." 
-    } 
-  ]
+    "cath_culture_negative":
+      { "type": "result",
+        "text": "The resident's urine culture results do not signify CAUTI." 
+      } 
+  }
 }
 
