@@ -1,9 +1,0 @@
-.DS_Store
-.sass-cache
-.sass-cache/*
-
-npm-debug.log
-
-Gemfile.lock
-
-_site
