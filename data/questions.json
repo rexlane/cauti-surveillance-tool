@@ -20,7 +20,8 @@
       },
 
     "cath_or_no_cath": 
-      { "type": "question",
+      { "parent1": "start",
+        "type": "question",
         "text": "Please select the appropriate option below.",
         "options": 
           [ { "target": "no_cath_culture",
@@ -33,12 +34,15 @@
       },
 
     "no_symptoms_no_cauti": 
-      { "type": "result",
+      { "parent1": "start",
+        "type": "result",
         "text": "The resident does not display the symptoms of CAUTI." 
       },
 
     "no_cath_culture": 
-      { "type": "question",
+      { "parent1": "cath_or_no_cath",
+        "parent2": "start",
+        "type": "question",
         "text": "Does a urine culture reveal either of the following?",
         "criteria": 
           [ "A voided urine culture positive for ≥105 colony forming units (CFU)/ml of no more than 2 species of microorganisms",
@@ -51,17 +55,25 @@
       },
 
     "no_cath_culture_positive":
-      { "type": "result",
+      { "parent1": "no_cath_culture",
+        "parent2": "cath_or_no_cath",
+        "parent3": "start",
+        "type": "result",
         "text": "The resident's symptoms and urine culture results signify CAUTI." 
       },
 
     "no_cath_culture_negative": 
-      { "type": "result",
+      { "parent1": "no_cath_culture",
+        "parent2": "cath_or_no_cath",
+        "parent3": "start",
+        "type": "result",
         "text": "The resident's urine culture results do not signify CAUTI." 
       },
 
     "cath_culture":
-      { "type": "question",
+      { "parent1": "cath_or_no_cath",
+        "parent2": "start",
+        "type": "question",
         "text": "Does a urine culture reveal the following?",
         "criteria": 
           [ "Positive culture with ≥105 colony forming units (CFU)/ml of any number of microorganisms from indwelling catheter specimen" ],
@@ -72,12 +84,18 @@
       },
 
     "cath_culture_positive": 
-      { "type": "result",
+      { "parent1": "cath_culture",
+        "parent2": "cath_or_no_cath",
+        "parent3": "start",
+        "type": "result",
         "text": "The resident's symptoms and urine culture results signify CAUTI." 
       },
     
     "cath_culture_negative":
-      { "type": "result",
+      { "parent1": "cath_culture",
+        "parent2": "cath_or_no_cath",
+        "parent3": "start",
+        "type": "result",
         "text": "The resident's urine culture results do not signify CAUTI." 
       } 
   }

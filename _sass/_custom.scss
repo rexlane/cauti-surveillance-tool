@@ -5,3 +5,58 @@
 // .result {
 //   color: blue;
 // }
+
+// .main_block {
+//   // border: 1px solid red;
+// }
+
+.main_block {
+  // display: block;
+  // clear: both;
+  // border: red solid 1px;
+  overflow: hidden;
+  background-color: $grey-color-light;
+  padding: 20px;
+  margin: 20px 0;
+
+}
+
+.option_wrapper {
+  padding: 0;
+  margin: 0;
+}
+
+.option_button {
+  // -webkit-appearance: button;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  float: left;
+  width: 44%;
+  height: 100%;
+  background-color: $grey-color;
+  margin-left: 3%;
+  &:hover { color: darken($grey-color, 15%)};
+
+}
+
+.option_button:first-child {
+  background-color: $grey-color;
+  margin-left: 0;
+  margin-right: 3%;
+}
+
+.option_button_link {
+  display: block;
+  text-align: center;
+  padding: 10px;
+}
+
+.option_button > a {
+  color: #ffffff;
+}
+
+#start_over {
+  display: block;
+  clear: both;
+}
