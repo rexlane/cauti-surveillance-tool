@@ -36,7 +36,8 @@
     "no_symptoms_no_cauti": 
       { "parent1": "start",
         "type": "result",
-        "text": "The resident does not display the symptoms of CAUTI." 
+        "text": "The resident does not display the symptoms of CAUTI.",
+        "more": "Sed vehicula ligula vitae nisi dapibus, a venenatis nunc consectetur. Morbi ut purus ligula. Integer massa est, commodo non massa id, posuere viverra tortor. Vivamus at magna sit amet diam vulputate scelerisque. Praesent id aliquet quam. Nulla augue justo, aliquam eu nibh a, finibus condimentum risus. Vivamus non sem porta, viverra ex et, scelerisque ante. Integer iaculis non nisi eget varius. Nullam pellentesque quam nec lorem tempor, a sodales mauris mollis. Sed vestibulum ultricies quam, id aliquet diam pretium ac. Ut semper eleifend fringilla." 
       },
 
     "no_cath_culture": 
@@ -59,7 +60,8 @@
         "parent2": "cath_or_no_cath",
         "parent3": "start",
         "type": "result",
-        "text": "The resident's symptoms and urine culture results signify CAUTI." 
+        "text": "The resident's symptoms and urine culture results signify CAUTI.",
+        "more": "Sed vehicula ligula vitae nisi dapibus, a venenatis nunc consectetur. Morbi ut purus ligula. Integer massa est, commodo non massa id, posuere viverra tortor. Vivamus at magna sit amet diam vulputate scelerisque. Praesent id aliquet quam. Nulla augue justo, aliquam eu nibh a, finibus condimentum risus. Vivamus non sem porta, viverra ex et, scelerisque ante. Integer iaculis non nisi eget varius. Nullam pellentesque quam nec lorem tempor, a sodales mauris mollis. Sed vestibulum ultricies quam, id aliquet diam pretium ac. Ut semper eleifend fringilla." 
       },
 
     "no_cath_culture_negative": 
@@ -67,7 +69,8 @@
         "parent2": "cath_or_no_cath",
         "parent3": "start",
         "type": "result",
-        "text": "The resident's urine culture results do not signify CAUTI." 
+        "text": "The resident's urine culture results do not signify CAUTI.",
+        "more": "Sed vehicula ligula vitae nisi dapibus, a venenatis nunc consectetur. Morbi ut purus ligula. Integer massa est, commodo non massa id, posuere viverra tortor. Vivamus at magna sit amet diam vulputate scelerisque. Praesent id aliquet quam. Nulla augue justo, aliquam eu nibh a, finibus condimentum risus. Vivamus non sem porta, viverra ex et, scelerisque ante. Integer iaculis non nisi eget varius. Nullam pellentesque quam nec lorem tempor, a sodales mauris mollis. Sed vestibulum ultricies quam, id aliquet diam pretium ac. Ut semper eleifend fringilla." 
       },
 
     "cath_culture":
@@ -88,7 +91,8 @@
         "parent2": "cath_or_no_cath",
         "parent3": "start",
         "type": "result",
-        "text": "The resident's symptoms and urine culture results signify CAUTI." 
+        "text": "The resident's symptoms and urine culture results signify CAUTI.",
+        "more": "Sed vehicula ligula vitae nisi dapibus, a venenatis nunc consectetur. Morbi ut purus ligula. Integer massa est, commodo non massa id, posuere viverra tortor. Vivamus at magna sit amet diam vulputate scelerisque. Praesent id aliquet quam. Nulla augue justo, aliquam eu nibh a, finibus condimentum risus. Vivamus non sem porta, viverra ex et, scelerisque ante. Integer iaculis non nisi eget varius. Nullam pellentesque quam nec lorem tempor, a sodales mauris mollis. Sed vestibulum ultricies quam, id aliquet diam pretium ac. Ut semper eleifend fringilla." 
       },
     
     "cath_culture_negative":
@@ -96,7 +100,8 @@
         "parent2": "cath_or_no_cath",
         "parent3": "start",
         "type": "result",
-        "text": "The resident's urine culture results do not signify CAUTI." 
+        "text": "The resident's urine culture results do not signify CAUTI.", 
+        "more": "Sed vehicula ligula vitae nisi dapibus, a venenatis nunc consectetur. Morbi ut purus ligula. Integer massa est, commodo non massa id, posuere viverra tortor. Vivamus at magna sit amet diam vulputate scelerisque. Praesent id aliquet quam. Nulla augue justo, aliquam eu nibh a, finibus condimentum risus. Vivamus non sem porta, viverra ex et, scelerisque ante. Integer iaculis non nisi eget varius. Nullam pellentesque quam nec lorem tempor, a sodales mauris mollis. Sed vestibulum ultricies quam, id aliquet diam pretium ac. Ut semper eleifend fringilla."
       } 
   }
 }
