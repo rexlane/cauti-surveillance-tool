@@ -9,10 +9,8 @@ $(document).ready ->
       window.questions = data.questions
       bindFindQuestionToHashChange()
       findQuestionFromHash()
-      # show()
 
 generateQuestionText = (question_id) ->
-
   question = questions[question_id]
   html_string = ""
   html_string = html_string + "<div class='main_block #{question.type}' id='#{question_id}'><p>#{question.text}</p>"
@@ -29,10 +27,8 @@ generateQuestionText = (question_id) ->
     #   html_string = html_string + "<li id='#{option.target}' class='option_button'><a href='##{option.target}' class='option_button_link'>#{option.text}</a></li>"
     option_first = question.options[0]  
     html_string = html_string + "<li id='#{option_first.target}' class='option_button first'><a href='##{option_first.target}' class='option_button_link'>#{option_first.text}</a></li>"
-
     option_second = question.options[1]  
     html_string = html_string + "<li id='#{option_second.target}' class='option_button second'><a href='##{option_second.target}' class='option_button_link'>#{option_second.text}</a></li>"
-
     html_string = html_string + "</ul>"
 
   html_string = html_string + "</div>"
@@ -42,30 +38,37 @@ generateQuestionText = (question_id) ->
   else
     noMore()
 
-  changePageText(html_string)
-
-noMore = ->
-  $("#more_block, #more_text, #less_link").hide()
-  
+  refreshBodyWrapper(html_string)
 
 more = (question_id) ->
   question = questions[question_id]
-  html_string = ""
-  html_string = html_string + "<h3>Background</h3><p id='stuff'>#{question.more}</p>"
-  $('#more_block').hide().fadeIn('slow')
-  $('#more_text').html(html_string)
+  more_string = ""
+  more_string = more_string + "<h3>Background</h3><p id='stuff'>#{question.more}</p>"
+  $('#more_text').html(more_string)
+  $('#more_link').show()
   show()
 
 show = ->
-  $('#more_link, #less_link').click (e) ->
-    $('#more_text').slideToggle()
-    $('#more_link, #less_link').toggle()
+  $('#more_link').click (e) ->
+    $('#more_text').slideDown()
+    $('#more_link').hide()
+    $('#less_link').show()
+    return
+  $('#less_link').click (e) ->
+    $('#more_text').slideUp()
+    $('#more_link').show()
+    $('#less_link').hide()
     return
   return
 
+noMore = ->
+  $("#more_link, #more_text, #less_link").hide()
+
+refreshBodyWrapper = (new_string) ->
+  $("#body_wrapper").hide(changePageText(new_string)).fadeIn('slow')
+
 changePageText = (new_string) ->
   $("#question_block").html(new_string)
-  $("#body_wrapper").hide().fadeIn('slow')
   setLIHeight()
 
 findQuestionFromHash = ->
