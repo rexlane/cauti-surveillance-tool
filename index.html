@@ -3,17 +3,15 @@ layout: default
 ---
 
 <div class="home">
+  {% include about_teaser.html %}
 
-  <a href="{{ site.baseurl }}/"><h1 class="page-heading">CAUTI Surveillance Worksheet</h1></a>
+  <p><a href="{{ site.baseurl }}/about.html">Read more.</a></p>
 
   <div id="body_wrapper">
   <div id="question_block"></div>
   <!-- <div><p id="start_over"><a href="#start">Start over.</a></p></div> -->
-  <div id="more_block">
-    <a id="more_link">More ▼</a>
-    <a id="less_link">Less ▲</a>
-      <div id="more_text"></div>
-  </div>
-  </div>
+<a class="btn btn-primary text-toggle" role="button" data-toggle="collapse" href="#more_text" aria-expanded="false" aria-controls="collapseExample" style="display:none"><span class="hiding-text">More</span><span class="showing-text">Less</span></a>
+
+<div class="collapse" id="more_text"></div>
 
 </div>

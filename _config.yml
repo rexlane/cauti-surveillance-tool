@@ -1,6 +1,9 @@
 # Site settings
-title: CAUTI Surveillance Worksheet
+title: CAUTI Surveillance Assessment
 baseurl: "/cauti-surveillance-tool" # the subpath of your site, e.g. /blog/
 
 # Build settings
 markdown: kramdown
+
+cdc_url: "http://www.cdc.gov/nhsn/PDFs/LTC/LTCF-UTI-protocol_FINAL_8-24-2012.pdf"
+short_def: "CAUTI events occur when a resident develops signs and symptoms localizing to the urinary tract while having an indwelling urinary catheter in place or removed within the two (2) calendar days prior to the date of event.</p><p>NOTE: An indwelling urinary catheter should be in place for a minimum of two (2) calendar days before infection onset (where day of catheter insertion = day 1) in order for the UTI to be catheter-associated."

@@ -22,13 +22,17 @@
     "cath_or_no_cath": 
       { "parent1": "start",
         "type": "question",
-        "text": "Please select the appropriate option below.",
+        "text": "Please indicate one of the following:",
+        "criteria": 
+        ["The urinary catheter was removed in the last two (2) calendar days.",
+        "The urinary catheter is in place."
+        ],
         "options": 
           [ { "target": "no_cath_culture",
-              "text": "The urinary catheter was removed in the last two (2) calendar days." 
+              "text": "Removed" 
             },
             { "target": "cath_culture",
-              "text": "The urinary catheter is in place." 
+              "text": "In place" 
             } 
           ] 
       },
@@ -37,7 +41,7 @@
       { "parent1": "start",
         "type": "result",
         "text": "The resident does not display the symptoms of CAUTI.",
-        "more": "Sed vehicula ligula vitae nisi dapibus, a venenatis nunc consectetur. Morbi ut purus ligula. Integer massa est, commodo non massa id, posuere viverra tortor. Vivamus at magna sit amet diam vulputate scelerisque. Praesent id aliquet quam. Nulla augue justo, aliquam eu nibh a, finibus condimentum risus. Vivamus non sem porta, viverra ex et, scelerisque ante. Integer iaculis non nisi eget varius. Nullam pellentesque quam nec lorem tempor, a sodales mauris mollis. Sed vestibulum ultricies quam, id aliquet diam pretium ac. Ut semper eleifend fringilla." 
+        "more": "Symptomatic UTI events occur when the resident manifests signs and symptoms such as acute dysuria, new and/or marked increase in urinary frequency, suprapubic tenderness, etc., which localize the infection to the urinary tract." 
       },
 
     "no_cath_culture": 
@@ -46,8 +50,8 @@
         "type": "question",
         "text": "Does a urine culture reveal either of the following?",
         "criteria": 
-          [ "A voided urine culture positive for ≥105 colony forming units (CFU)/ml of no more than 2 species of microorganisms",
-            "Positive culture with ≥102 colony forming units (CFU)/ml of any number of microorganisms from straight in/out catheter specimen" 
+          [ "A voided urine culture positive for ≥10<sup>5</sup> colony forming units (CFU)/ml of no more than 2 species of microorganisms",
+            "Positive culture with ≥10<sup>2</sup> colony forming units (CFU)/ml of any number of microorganisms from straight in/out catheter specimen"
           ],
         "options": 
           [ { "target": "no_cath_culture_positive", "text": "Yes" },
@@ -60,8 +64,8 @@
         "parent2": "cath_or_no_cath",
         "parent3": "start",
         "type": "result",
-        "text": "The resident's symptoms and urine culture results signify CAUTI.",
-        "more": "Sed vehicula ligula vitae nisi dapibus, a venenatis nunc consectetur. Morbi ut purus ligula. Integer massa est, commodo non massa id, posuere viverra tortor. Vivamus at magna sit amet diam vulputate scelerisque. Praesent id aliquet quam. Nulla augue justo, aliquam eu nibh a, finibus condimentum risus. Vivamus non sem porta, viverra ex et, scelerisque ante. Integer iaculis non nisi eget varius. Nullam pellentesque quam nec lorem tempor, a sodales mauris mollis. Sed vestibulum ultricies quam, id aliquet diam pretium ac. Ut semper eleifend fringilla." 
+        "text": "The resident's symptoms and urine culture results meet the NHSN definition for CAUTI.",
+        "more": "CAUTI events occur when a resident develops signs and symptoms localizing to the urinary tract while having an indwelling urinary catheter in place or removed within the two (2) calendar days prior to the date of event.</p><p>NOTE: An indwelling urinary catheter should be in place for a minimum of two (2) calendar days before infection onset (where day of catheter insertion = day 1) in order for the UTI to be catheter-associated." 
       },
 
     "no_cath_culture_negative": 
@@ -69,8 +73,8 @@
         "parent2": "cath_or_no_cath",
         "parent3": "start",
         "type": "result",
-        "text": "The resident's urine culture results do not signify CAUTI.",
-        "more": "Sed vehicula ligula vitae nisi dapibus, a venenatis nunc consectetur. Morbi ut purus ligula. Integer massa est, commodo non massa id, posuere viverra tortor. Vivamus at magna sit amet diam vulputate scelerisque. Praesent id aliquet quam. Nulla augue justo, aliquam eu nibh a, finibus condimentum risus. Vivamus non sem porta, viverra ex et, scelerisque ante. Integer iaculis non nisi eget varius. Nullam pellentesque quam nec lorem tempor, a sodales mauris mollis. Sed vestibulum ultricies quam, id aliquet diam pretium ac. Ut semper eleifend fringilla." 
+        "text": "The resident's urine culture results do not meet the NHSN definition for CAUTI.",
+        "more": "" 
       },
 
     "cath_culture":
@@ -79,7 +83,7 @@
         "type": "question",
         "text": "Does a urine culture reveal the following?",
         "criteria": 
-          [ "Positive culture with ≥105 colony forming units (CFU)/ml of any number of microorganisms from indwelling catheter specimen" ],
+          [ "Positive culture with ≥10<sup>5</sup> colony forming units (CFU)/ml of any number of microorganisms from indwelling catheter specimen" ],
         "options": 
           [ { "target": "cath_culture_positive", "text": "Yes" },
             { "target": "cath_culture_negative", "text": "No" } 
@@ -91,8 +95,8 @@
         "parent2": "cath_or_no_cath",
         "parent3": "start",
         "type": "result",
-        "text": "The resident's symptoms and urine culture results signify CAUTI.",
-        "more": "Sed vehicula ligula vitae nisi dapibus, a venenatis nunc consectetur. Morbi ut purus ligula. Integer massa est, commodo non massa id, posuere viverra tortor. Vivamus at magna sit amet diam vulputate scelerisque. Praesent id aliquet quam. Nulla augue justo, aliquam eu nibh a, finibus condimentum risus. Vivamus non sem porta, viverra ex et, scelerisque ante. Integer iaculis non nisi eget varius. Nullam pellentesque quam nec lorem tempor, a sodales mauris mollis. Sed vestibulum ultricies quam, id aliquet diam pretium ac. Ut semper eleifend fringilla." 
+        "text": "The resident's symptoms and urine culture results meet the NHSN definition for CAUTI.",
+        "more": "The resident displays CAUTI signs/symptoms and a positive urine culture." 
       },
     
     "cath_culture_negative":
@@ -100,8 +104,8 @@
         "parent2": "cath_or_no_cath",
         "parent3": "start",
         "type": "result",
-        "text": "The resident's urine culture results do not signify CAUTI.", 
-        "more": "Sed vehicula ligula vitae nisi dapibus, a venenatis nunc consectetur. Morbi ut purus ligula. Integer massa est, commodo non massa id, posuere viverra tortor. Vivamus at magna sit amet diam vulputate scelerisque. Praesent id aliquet quam. Nulla augue justo, aliquam eu nibh a, finibus condimentum risus. Vivamus non sem porta, viverra ex et, scelerisque ante. Integer iaculis non nisi eget varius. Nullam pellentesque quam nec lorem tempor, a sodales mauris mollis. Sed vestibulum ultricies quam, id aliquet diam pretium ac. Ut semper eleifend fringilla."
+        "text": "The resident's urine culture results do not meet the NHSN definition for CAUTI.", 
+        "more": ""
       } 
   }
 }
